@@ -25,7 +25,17 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <script>
-    document.ready(function() {location.href = "https://hype-control.github.io/not-such-page"});
+    function ready(callbackFunction){
+        if(document.readyState != 'loading')
+            callbackFunction(event)
+        else
+            document.addEventListener("DOMContentLoaded", callbackFunction)
+    }
+    ready(event => {
+        location.href = "https://hype-control.github.io/not-such-page"
+    });
+
+
 </script>
 
 

@@ -26,9 +26,16 @@
 
 <script>
 
-    document.ready(
+    function ready(callbackFunction){
+        if(document.readyState != 'loading')
+            callbackFunction(event)
+        else
+            document.addEventListener("DOMContentLoaded", callbackFunction)
+    }
+    ready(event => {
         setTimeout(function() {location.href = "https://hype-control.github.io/not-such-page"}, 5000)
-    );
+    });
+
 
 </script>
 
